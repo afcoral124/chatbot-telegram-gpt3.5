@@ -1,6 +1,7 @@
 from dotenv import load_dotenv, find_dotenv
 import requests
 import openai
+import json
 import time
 import os
 
@@ -116,7 +117,18 @@ class ChatBotMaker:
 
         return "Ocurrió un Error :("
     
-    
+    def save_conversations(self):
+        
+        conversations=[]
+        for chat in self.chats:
+            new_conversation={"chat_id": chat.chat_id, "messages": chat.messages}
+            conversations.append(new_conversation)
+        
+        with open("saved_conversations.jsonl", 'w', encoding="utf8") as file:
+            for conversation in conversations:
+                json_line = json.dumps(conversation)
+                file.write(json_line + '\n')    
+        
     def run(self):
         print("Starting bot...")
         offset = 0
@@ -140,6 +152,10 @@ class ChatBotMaker:
                     GPT_answer = self.get_openai_response(chat_id)
                     #Envía a telegram la respuesta del modelo para que se le imprima al usuario
                     self.send_messages(chat_id, GPT_answer)
+                    
+                    if user_message == "pushtohub":
+                        self.save_conversations()
+                        
                     
             else:
                 time.sleep(1)
