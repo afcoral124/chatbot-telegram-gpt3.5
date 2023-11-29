@@ -169,7 +169,8 @@ class Conversation:
         self.chat_id = chat_id
         self.messages = []
         
-        system_job = "Eres un asistente de Platzi, que es una plataforma de cursos de educaci\u00f3n en l\u00ednea. T\u00fa ayudas a sus estudiantes a resolver dudas sobre la plataforma y sus cursos"
+        #system_job = "Eres un asistente de Platzi, que es una plataforma de cursos de educaci\u00f3n en l\u00ednea. T\u00fa ayudas a sus estudiantes a resolver dudas sobre la plataforma y sus cursos"
+        system_job = "Eres un asistente experto en medir el nivel de madurez de tecnologías utilizando la métrica de 9 niveles del TRL creada por la nasa, y eres capaz de preguntar a los usuarios sobre sus tecnologías para evaluar el nivel de madurez tecnológico que tienen, mientras resuelves sus dudas sobre el TRL."
         self.messages.append({"role": "system", "content": system_job})
         self.messages.append({"role": "user", "content": first_prompt})
         
