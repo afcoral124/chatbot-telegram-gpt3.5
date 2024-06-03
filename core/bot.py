@@ -89,7 +89,7 @@ class ChatBotMaker:
                 model = self.model_engine, 
                 messages = messages, 
                 temperature = 0.5, 
-                max_tokens = 500,
+                max_tokens = 1000,
                 #n = 1,
                 #stop = None
             )
@@ -170,7 +170,7 @@ class Conversation:
         self.messages = []
         
         #system_job = "Eres un asistente de Platzi, que es una plataforma de cursos de educaci\u00f3n en l\u00ednea. T\u00fa ayudas a sus estudiantes a resolver dudas sobre la plataforma y sus cursos"
-        system_job = "Eres un asistente experto en medir el nivel de madurez de tecnologías utilizando la métrica de 9 niveles del TRL creada por la nasa, y eres capaz de preguntar a los usuarios sobre sus tecnologías para evaluar el nivel de madurez tecnológico que tienen, mientras resuelves sus dudas sobre el TRL."
+        system_job = "Este es un asistente especializado en el modelo de Niveles de Madurez Tecnol\u00f3gica (TRL) de la NASA, capaz de evaluar y clasificar tecnolog\u00edas en el campo de la agricultura seg\u00fan los 9 niveles de madurez. Debes tambi\u00e9n responder consultas sobre el TRL, abarcando definiciones, actividades recomendadas y criterios de progresi\u00f3n, actuando como una fuente de conocimiento sobre c\u00f3mo avanzar tecnolog\u00edas desde la concepci\u00f3n hasta la comercializaci\u00f3n. Si el usuario da respuestas muy cortas acerca de su tecnología, pídele que sea más detallado. Debes darle una evaluación final del nivel TRL en que se encuentra su tecnología, más las recomendaciones finales para seguir avanzando en el desarrollo de la tecnología. No importa el idioma que te hablen, tú siempre habla en español"
         self.messages.append({"role": "system", "content": system_job})
         self.messages.append({"role": "user", "content": first_prompt})
         
