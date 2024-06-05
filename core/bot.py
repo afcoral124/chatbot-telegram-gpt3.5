@@ -10,7 +10,7 @@ class ChatBotMaker:
     def __init__(self, env_file):
         load_dotenv(find_dotenv(env_file))
         openai.api_key = os.getenv("OPENAI_API_KEY")
-        self.telegram_token = os.getenv("TELEGRAM_API_KEY")
+        self.telegram_token = "6632580260:AAEopRzFVZFrf_Ibl8UAgF9q6A6-4iaI3Xs"
         self.model_engine = os.getenv("MODEL_ENGINE")
         self.chats = []
     
@@ -139,22 +139,22 @@ class ChatBotMaker:
             
             if updates:
                 for update in updates:
-                    
-                    offset = update["update_id"] + 1
-                    chat_id = update["message"]["chat"]['id']
-                    user_message = update["message"]["text"]
-                    print(f"Received message: {user_message}")
-                    
-                    #valida si la conversación es nueva o existente, y almacena el mensaje
-                    self.validate_chat(chat_id, user_message)
-                    
-                    #Genera una respuesta del modelo GPT basado en el mensaje de telegram(prompt)
-                    GPT_answer = self.get_openai_response(chat_id)
-                    #Envía a telegram la respuesta del modelo para que se le imprima al usuario
-                    self.send_messages(chat_id, GPT_answer)
-                    
-                    if user_message == "pushtohub":
-                        self.save_conversations()
+                    if 'message' in update:
+                        offset = update["update_id"] + 1
+                        chat_id = update["message"]["chat"]['id']
+                        user_message = update["message"]["text"]
+                        print(f"Received message: {user_message}")
+                        
+                        #valida si la conversación es nueva o existente, y almacena el mensaje
+                        self.validate_chat(chat_id, user_message)
+                        
+                        #Genera una respuesta del modelo GPT basado en el mensaje de telegram(prompt)
+                        GPT_answer = self.get_openai_response(chat_id)
+                        #Envía a telegram la respuesta del modelo para que se le imprima al usuario
+                        self.send_messages(chat_id, GPT_answer)
+                        
+                        if user_message == "pushtohub":
+                            self.save_conversations()
                         
                     
             else:
