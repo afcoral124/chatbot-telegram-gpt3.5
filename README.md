@@ -4,4 +4,4 @@ Esta es una aplicación pensada para ser alojada en una máquina virtual que act
 
 Este script recibe los mensajes de los usuarios desde la API de Telegram, los envía a la API de OpenAI como prompt, y luego devuelve las respuestas generadas de vuelta a Telegram.
 
-![1][Captura de pantalla 2024-08-01 202047](https://github.com/user-attachments/assets/164f4d78-8de5-4ae8-8c84-b39030b5611a)
+![1](https://github.com/user-attachments/assets/164f4d78-8de5-4ae8-8c84-b39030b5611a)
