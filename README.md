@@ -1,4 +1,4 @@
-# MIDDLEWARE PARA LA IMPLEMENTACIÓN DEL CHATBOT INTELIGENTE
+# AMADEUS - TRL- BOT: MIDDLEWARE PARA LA IMPLEMENTACIÓN DEL CHATBOT INTELIGENTE
 
 Esta es una aplicación pensada para ser alojada en una máquina virtual que actúa como intermediario entre la API de Telegram y la API de OpenAI. Gestiona la lógica de negocio y las solicitudes/respuestas entre las dos APIs utilizando HTTP.Este script recibe los mensajes de los usuarios desde la API de Telegram, los envía a la API de OpenAI como prompt, y luego devuelve las respuestas generadas de vuelta a Telegram.
 
