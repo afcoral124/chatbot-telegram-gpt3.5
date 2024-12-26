@@ -10,7 +10,7 @@ class ChatBotMaker:
     def __init__(self, env_file):
         load_dotenv(find_dotenv(env_file))
         openai.api_key = os.getenv("OPENAI_API_KEY")
-        self.telegram_token = "6632580260:AAEopRzFVZFrf_Ibl8UAgF9q6A6-4iaI3Xs"
+        self.telegram_token = os.getenv("TELEGRAM_TOKEN")
         self.model_engine = os.getenv("MODEL_ENGINE")
         self.chats = []
     
