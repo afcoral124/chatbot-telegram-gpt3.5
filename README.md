@@ -1,4 +1,10 @@
 # AMADEUS - TRL- BOT: MIDDLEWARE PARA LA IMPLEMENTACIÓN DEL CHATBOT INTELIGENTE
+El desarrollo de mi tesis se basó en la implementación de LLMs (Modelos grandes de lenguaje) para la creación de un asistente virtual inteligente que sea experto en la evaluación de madurez de tecnologías, utilizando como marco de referencia de evaluación el TRL (Technology Readiness Level creado por la NASA). Utilizando la metodología CRISP-ML(Q) se diseñó y desarrolló el proyecto en el que se realizaron las fases de:
+- Entendimiento del negocio
+- Ingeniería de datos (creación de dataset, limpieza del dataset, segmentación de conjunto de datos para entrenamiento y pruebas)
+- Ingeniería de modelos (análisis de varios modelos y sus desempeños, e.g. Llama 2, GPT 3.5.turbo, OpenAssistant, Claude...)
+- Evaluación de modelos (Fine-tuning y conjunto de pruebas de rendimiento a los modelos seleccionados)
+- Despliegue (Diseño de la arquitectura y despliegue de la aplicación en funcionamiento)
 ![Image](https://github.com/user-attachments/assets/101ae4ad-aa7c-4d75-8092-34b016319d72)
 
 
